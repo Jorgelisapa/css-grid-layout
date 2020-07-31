@@ -14,12 +14,22 @@
         /* grid-template-columns: 33% 33% 33%;
         grid-template-rows: 100px 100px 50px 70px; */
         /* grid-template: rows / columns; */
-        grid-template: 100px 100px 50px 70px / 33% 33% 33%;
+        grid-template: 100px 110px 70px / 33% 33% 33%;
       }
       .item {
         background: lightblue;
         padding: 10px;
         border: 1px solid red;
+      }
+      .item:nth-of-type(4) {
+        background: indigo;
+        overflow: auto;
+        /* display: subgrid; */
+        display: grid;
+        grid-template: 100px 110px 70px / 33% 33% 33%;
+      }
+      .item .item {
+        background: yellowgreen;
       }
     </style>
   </head>
@@ -28,7 +38,13 @@
       <div class="item">contenido #1</div>
       <div class="item">contenido #2</div>
       <div class="item">contenido #3</div>
-      <div class="item">contenido #4</div>
+      <div class="item">
+        <div class="item">subitem #1</div>
+        <div class="item">subitem #2</div>
+        <div class="item">subitem #3</div>
+        <div class="item">subitem #4</div>
+        <div class="item">subitem #5</div>
+      </div>
       <div class="item">contenido #5</div>
       <div class="item">contenido #6</div>
       <div class="item">contenido #7</div>
